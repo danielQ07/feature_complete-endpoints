@@ -30,15 +30,17 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
 
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-      db_url: jdbc:mysql://store-db.mysql.database.azure.com:3306/store-db
-      password: password123!
-      
+    env:
+      db_url: ${{ secrets.PASSWORD }}
+      pass: ${{ secrets.DB_URL }}
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
