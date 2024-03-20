@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductController {
     @GetMapping
     public String holamUndo(){
-        return "Hola Mundo 2";
+        return "Hola Mundo 2 estoes un verdaero cambio";
     }
 }
