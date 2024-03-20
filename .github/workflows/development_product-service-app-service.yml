@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      DB_URL: ${{vars.DB_URL }}
-      PASSWORD: ${{vars.PASSWORD }}
+      DB_URL: ${{secrets.DB_URL }}
+      PASSWORD: ${{secrets.PASSWORD }}
 
     steps:
       - uses: actions/checkout@v4
