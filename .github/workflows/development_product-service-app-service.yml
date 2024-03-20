@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DB_URL: ${{vars.PASSWORD }}
+      PASSWORD: ${{vars.DB_URL }}
 
     steps:
       - uses: actions/checkout@v4
@@ -37,9 +40,6 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    env:
-      DB_URL: jdbc:mysql://store-db.mysql.database.azure.com:3306/store-db
-      PASSWORD: password123!
 
     steps:
       - name: Download artifact from build job
