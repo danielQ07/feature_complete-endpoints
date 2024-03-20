@@ -38,8 +38,8 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     env:
-      db_url: ${{ secrets.PASSWORD }}
-      password: ${{ secrets.DB_URL }}
+      DB_URL: ${{ variables.PASSWORD }}
+      PASSWORD: ${{ variables.DB_URL }}
 
     steps:
       - name: Download artifact from build job
