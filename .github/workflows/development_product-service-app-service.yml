@@ -36,6 +36,8 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      db_url: jdbc:mysql://store-db.mysql.database.azure.com:3306/store-db
+      password: password123!
       
     steps:
       - name: Download artifact from build job
