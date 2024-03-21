@@ -1,3 +1,0 @@
-name: DEVELOPMENT CHANGE SUBMIT
-app-name: 'product-service-app-DEV'
-publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BC1D72ED626048739FEE4E331479DE67 }}
