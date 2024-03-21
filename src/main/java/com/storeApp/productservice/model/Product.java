@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 @Entity
 @Data
 @Builder
@@ -22,6 +24,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
     private String productCode;
+    @Column(updatable = false)
+    private Date creationDate;
+    private Date lastUpdatedDate;
     private String description;
     private Integer quantity;
     private Double price;
