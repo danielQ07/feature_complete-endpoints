@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - product-service-app-DEV
+name: DEVELOPMENT CHANGE SUBMIT
 
 on:
   push:
@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DB_URL: ${{secrets.DB_URL }}
+      PASSWORD: ${{secrets.PASSWORD }}
 
     steps:
       - uses: actions/checkout@v4
@@ -36,13 +39,13 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-      
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
           name: java-app
-      
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -50,4 +53,4 @@ jobs:
           app-name: 'product-service-app-DEV'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F14144A009554CAA9ED31AFAB6F7449D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BC1D72ED626048739FEE4E331479DE67 }}
