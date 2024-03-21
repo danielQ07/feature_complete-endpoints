@@ -23,9 +23,11 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
+    @Column(updatable = false)
     private String productCode;
     @Column(updatable = false)
     private Date creationDate;
+    private String name;
     private Date lastUpdatedDate;
     private String description;
     private Integer quantity;
