@@ -19,6 +19,8 @@ target/
 *.iml
 *.ipr
 
+.github/workflows/main_product-service-app-prod.yml
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
