@@ -70,4 +70,9 @@ public class ProductService {
     public ProductResponseDTO updateProduct(String productCode) {
         return null;
     }
+
+    public String deleteProduct(String productCode){
+        productRepository.deleteByProductCode(productCode);
+        return "Product "+productCode+" deleted";
+    }
 }
