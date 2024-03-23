@@ -26,7 +26,7 @@ public class ProductController {
         return productService.getProductByProductCode(productCode);
     }
 
-    @PatchMapping("/{productCodxe}")
+    @PatchMapping("/{productCode}")
     public ProductResponseDTO updateProduct(@PathVariable String productCode){
         return productService.updateProduct(productCode);
     }
