@@ -19,6 +19,7 @@ target/
 *.iml
 *.ipr
 
+.github/workflows/development_product-service-app-dev.yml
 .github/workflows/main_product-service-app-prod.yml
 
 ### NetBeans ###
