@@ -21,6 +21,11 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @DeleteMapping("/{productCode}")
+    public ResponseEntity<String> deleteProduct(@PathVariable String productCode){
+        return ResponseEntity.status(200).body(productService.deleteProduct(productCode));
+    }
+
     @GetMapping("/{productCode}")
     public ProductResponseDTO getProductBySkuCode(@PathVariable String productCode){
         return productService.getProductByProductCode(productCode);
